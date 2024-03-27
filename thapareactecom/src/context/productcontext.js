@@ -5,7 +5,8 @@ import reducer from "../reducer/productReducer";
 const AppContext = createContext();
 
 // const API = "https://api.pujakaitem.com/api/products";
-const API = `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/products`;
+// const API = `https://${process.env.REACT_APP_BACKEND_URL}/api/products`;
+const API = `https://ecomm-jyp6i8gjz-deepak19158s-projects.vercel.app/api/products`;
 
 const initialState = {
   isLoading: false,

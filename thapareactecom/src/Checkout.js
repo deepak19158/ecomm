@@ -19,7 +19,7 @@ const Checkout = () => {
     try {
       const order = await axios({
         method: "post",
-        url: `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/payment/createorder`,
+        url: `https://${process.env.REACT_APP_BACKEND_URL}/api/payment/createorder`,
         data: {
           amount: total_price + shipping_fee,
         },
@@ -38,7 +38,7 @@ const Checkout = () => {
         description: "Test Transaction",
         image: "https://example.com/your_logo",
         order_id: order_id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/payment/success`,
+        callback_url: `https://${process.env.REACT_APP_BACKEND_URL}/api/payment/success`,
         // callback_url: "http://localhost:3000/try",
         prefill: {
           name: "deepak gupta",

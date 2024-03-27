@@ -17,7 +17,7 @@ const OtpLogin = ({ setOtpMatched }) => {
     let otp = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
     setSendOtp(otp);
     axios.post(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/emailverification/sendMail`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/emailverification/sendMail`,
       {
         email: signup.email,
         otp,

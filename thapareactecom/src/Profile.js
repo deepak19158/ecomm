@@ -18,7 +18,7 @@ const Profile = () => {
 
   const getUserInfo = async () => {
     const user = await axios.get(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/auth/getuser`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/auth/getuser`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const Profile = () => {
   };
   const getOrderInfo = async () => {
     const res = await axios.get(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/order/getAllOrder`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/order/getAllOrder`,
       {
         headers: {
           "Content-Type": "application/json",

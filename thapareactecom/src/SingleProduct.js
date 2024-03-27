@@ -18,7 +18,7 @@ console.log(
   process.env.REACT_APP_BACKEND_HOST,
   process.env.REACT_APP_BACKEND_PORT
 );
-const API = `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/products`;
+const API = `https://${process.env.REACT_APP_BACKEND_URL}/api/products`;
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =

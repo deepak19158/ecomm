@@ -25,7 +25,7 @@ const Login = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     const auth = await axios.post(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/auth/login`, //loging in the user and getting the auth token in return
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, //loging in the user and getting the auth token in return
       credentials,
       {
         headers: {
@@ -36,7 +36,7 @@ const Login = () => {
     localStorage.setItem("authToken", auth.data); //storing cart token in local sotrage
 
     const cart = await axios.get(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/cart`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/cart`,
       {
         //extracting cart item from mongodb
         headers: {

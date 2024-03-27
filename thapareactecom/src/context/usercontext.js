@@ -45,7 +45,7 @@ export const UserProvider = ({ children }) => {
     // e.preventDefault();
     // try {
     const auth = await axios.post(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/auth/login`, //loging in the user and getting the auth token in return
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, //loging in the user and getting the auth token in return
       state.login,
       {
         headers: {
@@ -58,7 +58,7 @@ export const UserProvider = ({ children }) => {
     dispatch({ type: "SET_USERNAME", payload: auth.data.user.name }); //setting the username
 
     const cart = await axios.get(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/cart`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/cart`,
       {
         //extracting cart item from mongodb
         headers: {
@@ -73,7 +73,7 @@ export const UserProvider = ({ children }) => {
   const SubmitSignUp = async () => {
     // try {
     const auth = await axios.post(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/auth/createuser`, //loging in the user and getting the auth token in return
+      `https://${process.env.REACT_APP_BACKEND_URL}/api/auth/createuser`, //loging in the user and getting the auth token in return
       state.signup,
       {
         headers: {
@@ -91,7 +91,7 @@ export const UserProvider = ({ children }) => {
 
   const getUser = async () => {
     const user = await axios.get(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/getuser`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/getuser`,
       {
         //extracting cart item from mongodb
         headers: {

@@ -33,7 +33,7 @@ const updateProductInMongo = async (data) => {
     });
 
     await axios.post(
-      `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/cart/addItem`,
+      `https://${process.env.REACT_APP_BACKEND_URL}/cart/addItem`,
       updatedData,
       {
         //api call to push data in mongo

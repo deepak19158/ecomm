@@ -82,7 +82,7 @@ const Login = () => {
   // const verifyAuthToken = async (token) => {
   //   try {
   //     if (token === null) return null;
-  //     const user = await axios.post(`http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/auth/getuser`, {
+  //     const user = await axios.post(`https://${process.env.REACT_APP_BACKEND_URL}/api/auth/getuser`, {
   //       headers: {
   //         "Content-Type": "application/json",
   //         "auth-token": token,

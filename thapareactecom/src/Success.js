@@ -35,7 +35,7 @@ const Success = () => {
 
     axios
       .get(
-        `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/paymentInfo/${parsedData.razorpay_payment_id}`
+        `https://${process.env.REACT_APP_BACKEND_URL}/api/paymentInfo/${parsedData.razorpay_payment_id}`
       )
       .then((res) => {
         refillCompleteOrder(); //updating order details to state from local storage - orderDetails key
@@ -60,7 +60,7 @@ const Success = () => {
       //this is called multiple time we need only once when it has complete information and modeofpayment is upadted very lastly
       axios
         .post(
-          `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/api/order/placeOrder`,
+          `https://${process.env.REACT_APP_BACKEND_URL}/api/order/placeOrder`,
           {
             ...state,
             // ...JSON.parse(localStorage.getItem("prevOrderDetails")),
